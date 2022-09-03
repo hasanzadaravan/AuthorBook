@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create books table
+      author: Ravan Hasanzada
+      changes:
+        - createTable:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of book
+              - column:
+                  name: name
+                  type: varchar(64)
+                  remarks: name of books
+                  constraints:
+                    nullable: false
+              - column:
+                  name: topic
+                  type: varchar(64)
+                  remarks: topic of book
+                  constraints:
+                    nullable: false
+            remarks: Table to store information about books

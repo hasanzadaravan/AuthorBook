@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create authors table
+      author: Ravan Hasanzada
+      changes:
+        - createTable:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of author
+              - column:
+                  name: name
+                  type: varchar(64)
+                  remarks: name of author
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(64)
+                  remarks: surname of author
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: date of author
+
+            remarks: Table to store information about authors

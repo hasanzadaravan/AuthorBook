@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create authors_books table
+      author: Ravan Hasanzada
+      changes:
+        - createTable:
+            tableName: authors_books
+            columns:
+              - column:
+                  name: authors_id
+                  type: bigint
+                  remarks: id of authors
+                  constraints:
+                    foreignKeyName: fk_authors_books_to_authors
+                    references: authors(id)
+                    nullable: false
+              - column:
+                  name: books_id
+                  type: bigint
+                  remarks: id of books
+                  constraints:
+                    foreignKeyName: fk_authors_books_to_books
+                    references: books(id)
+                    nullable: false
+
+
